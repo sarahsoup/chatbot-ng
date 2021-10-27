@@ -44,14 +44,14 @@ d3.csv('./assets/script.csv').then(data => {
                 .html(round.values[0].response.substring(1,round.values[0].response.length-1));
         }
         user.selectAll('.response')
-            .data(round.values.filter(d => d.name != 'erica'))
+            .data(round.values.filter(d => d.name != 'Damian'))
             .enter()
             .append('h2')
             .attr('class','narrator hidden opacity-0')
             .attr('id',d => `response-${d.name}`)
             .html(d => d.response.substring(1,d.response.length-1));
         user.selectAll('.option')
-            .data(round.values.filter(d => d.name != 'erica'))
+            .data(round.values.filter(d => d.name != 'Damian'))
             .enter()
             .append('div')
             .attr('class',(i == 0) ? 'option' : 'option opacity-0')
@@ -148,8 +148,7 @@ function selectGood(round){
     nextRound.classed('hidden',false);
 
     setTimeout(function(){
-        nextRound.select('.erica-square').classed('slide-in-fwd-bottom',true);
-        nextRound.select('.bubble-erica').classed('slide-in-fwd-bottom',true);
+        nextRound.select('.bubble-damian').classed('slide-in-fwd-bottom',true);
     },defaultDelay + animDelay*2);
 
     setTimeout(function(){

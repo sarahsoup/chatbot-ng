@@ -11,25 +11,20 @@ d3.csv('./assets/script.csv').then(data => {
     const container = d3.select('.container');
 
     rounds.forEach((round,i) => {
-        // append erica div
-        const ericaIndex = round.values.map(d => d.name).indexOf('erica');
-        const ericaText = round.values[ericaIndex].option;
-        const ericaRow = container.append('div')
+        // append damian div
+        const damianIndex = round.values.map(d => d.name).indexOf('Damian');
+        const damianText = round.values[damianIndex].option;
+        const damianRow = container.append('div')
             .attr('class',(round.key == '1') ? `row round round-${round.key}` : `row round round-${round.key} hidden`)
             .attr('id',`round-${round.key}-erica`);
-        ericaRow.append('div')
-            .attr('class','col-2 col-lg-1 offset-lg-2')
-            .append('img')
-            .attr('class',(i == 0) ? 'erica-square' : 'erica-square opacity-0')
-            .attr('src','./assets/erica_square.png');
-        ericaRow.append('div')
-            .attr('class','col-8 col-lg-6')
+        damianRow.append('div')
+            .attr('class','offset-2 col-8 offset-lg-3 col-lg-6')
             .append('div')
-            .attr('class','erica')
+            .attr('class','damian')
             .append('div')
-            .attr('class',(i == 0) ? 'bubble-erica' : 'bubble-erica opacity-0')
+            .attr('class',(i == 0) ? 'bubble-damian' : 'bubble-damian opacity-0')
             .append('p')
-            .html(ericaText.substring(1, ericaText.length-1));
+            .html(damianText.substring(1, damianText.length-1));
 
         // append user div
         const user = container.append('div')
